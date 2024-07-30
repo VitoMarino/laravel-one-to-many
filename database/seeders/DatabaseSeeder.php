@@ -20,7 +20,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            ProjectSeeder::class
+            // Deve andare prima il Type, perchè prima avrò un tipo di progetto e poi un progetto.
+            // Nel db seeder, non è come le migrations che stabiliscono in modo temporale l'ordine.
+            // Qui dobbiamo dare noi l'ordine
+            TypeSeeder::class,
+            ProjectSeeder::class,
         ]);
     }
 }

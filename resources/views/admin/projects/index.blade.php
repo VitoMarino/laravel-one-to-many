@@ -7,6 +7,7 @@
                 <table class="table table-hover table-striped">
                     <thead>
                         <tr>
+                            <th scope="col">Type</th>
                             <th scope="col">Name</th>
                             <th scope="col">Activity</th>
                             <th scope="col">Description</th>
@@ -21,6 +22,7 @@
                     <tbody>
                         @foreach ($projects as $project)
                             <tr>
+                                <td>{{$project->type->name}}</td>
                                 <td>{{ $project->name }}</td>
                                 <td>{{ $project->activity }}</td>
                                 <td>{{ $project->description }}</td>

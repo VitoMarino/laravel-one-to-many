@@ -12,10 +12,17 @@ class Project extends Model
     use SoftDeletes;
 
     protected $fillable = [
+        'type_id',
         "name",
         "activity",
         "description",
         "date",
         "image",
     ];
+
+    // In questo caso la tabella ha relazione ONE quindi sarà al SINGOLARE.
+    //belongsTo significa che APPARTIENE ad una singola categoria
+    public function type(){
+        return $this->belongsTo(Project::class);
+    }
 }
